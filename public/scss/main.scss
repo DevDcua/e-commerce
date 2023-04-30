@@ -25,6 +25,273 @@ a{
 
 // HEADER
 
+header{
+    background-image: url('/e-commerce/assets/img/pexels-murilo-botelho-1865131.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .navbar{
+
+        padding: 15px 30px;
+        width: 100%;
+        height: 5.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    
+        a{
+            text-align: center;
+            font-weight: 600;
+    
+            .logoFitness{
+                width: 6.5rem;
+            }
+        }
+    
+        .navMenu{
+            display: flex;
+            align-items: center;
+
+            .links{
+                padding-right: 20px;
+                font-size: 1.2rem;
+                font-weight: 500;
+                font-family: system-ui;
+            }
+            
+            .bagContainer{
+                .bagLogo{
+                    width: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        .hamburger{
+            display: none; 
+            cursor: pointer;
+    
+            .bar{
+                display: block;
+                background: black;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+        }
 
 
+        .cart{
+            position: fixed;
+            width: 40%;
+            background: white;
+            height: 100vh;
+            top: 0;
+            right: -100%;
+            transition: 0.5s ease-in-out;
+            z-index: 10;
 
+            .cartTitle{
+                display: flex;
+                width: 100%;
+                height: auto;
+                align-items: center;
+                border-bottom: #262626 1px solid;
+
+                h2{
+                    text-align: center;
+                    flex-grow: 1;
+                    text-transform: uppercase;
+                    padding: 20px 0px;
+                    font-size: 1.5rem;
+                    font-family: system-ui;
+                }
+                .cartClose{
+                    padding: 0 20px;
+                    cursor: pointer;
+                    .barCart{
+                        flex-grow: 2;
+                        display: block;
+                        width: 25px;
+                        height: 3px;
+                        margin: 5px auto;
+                        -webkit-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;   
+    
+    
+                        &:nth-child(1){
+                            transform: translateY(8px) rotate(45deg);
+                            background: black;
+                        }
+                        &:nth-child(2){
+                            opacity: 0;
+                        }
+                        &:nth-child(3){
+                            transform: translateY(-8px) rotate(-45deg);
+                            background: red;
+                        }
+                    }
+    
+                    
+                }
+            }
+            
+        }
+
+        .cart.active{
+            right: 0;
+            transition: 0.3s;
+        }
+    }
+
+    .hero{
+        padding: 120px 0 0;
+        h1{
+            text-align: center;
+            font-size: 7rem;
+            font-weight: 900;
+            letter-spacing: 10px;
+            font-family: system-ui;
+
+            .titleMod{
+                color: red;
+            }
+        }
+    }
+}
+
+@media(max-width:1100px){
+    header{
+
+        .navbar{
+
+            .cart{
+                width: 55%;
+            }
+        }
+    }
+}
+
+
+@media(max-width:768px){
+
+    body.active{
+        overflow: hidden;
+    }
+
+    header{
+
+        .navbar{
+
+            .hamburger{
+                display: block;           
+            }
+    
+            .hamburger.active{
+    
+                .bar:nth-child(2){
+                    opacity: 0;
+                }
+                .bar:nth-child(1){
+                    transform: translateY(8px) rotate(45deg);
+                    background: white;
+                }
+                .bar:nth-child(3){
+                    transform: translateY(-8px) rotate(-45deg);
+                    background: red;
+                }
+            }
+    
+            .navMenu{
+    
+                position: fixed;
+                background: #262626;
+                right: -100%;
+                top: 0;
+                gap: 50px;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: 0.3s;
+                
+                .links{
+                    font-size: 2rem;
+                    color: rgb(241, 235, 235);
+                }
+    
+                .links:hover{
+                    text-decoration: underline;
+                    transition: 0.3s ease-in-out;
+                }
+
+                .bagContainer{
+
+                    .bagLogo{
+                        width: 60px;
+                        filter: invert(100%);
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+
+            .navMenu.active{
+                right: 0;
+            }
+
+            .cart{
+                width: 60%;
+            }
+    
+        }
+
+        .hero{
+
+            h1{
+                font-size: 5.7rem;
+            }
+        }
+    }
+
+
+}
+
+@media(max-width:600px){
+    header{
+
+        .navbar{
+
+            .cart{
+                width: 100%;
+            }
+        }
+        .hero{
+
+            h1{
+                font-size: 3.8rem;
+            }
+        }
+    }
+}
+
+@media(max-width:450px){
+    header{
+
+        .hero{
+
+            h1{
+                font-size: 2.5rem;
+            
+            }
+        }
+    }
+}

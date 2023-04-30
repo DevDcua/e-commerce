@@ -17,4 +17,195 @@ a {
   color: inherit;
 }
 
+header {
+  background-image: url("/e-commerce/assets/img/pexels-murilo-botelho-1865131.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header .navbar {
+  padding: 15px 30px;
+  width: 100%;
+  height: 5.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbar a {
+  text-align: center;
+  font-weight: 600;
+}
+header .navbar a .logoFitness {
+  width: 6.5rem;
+}
+header .navbar .navMenu {
+  display: flex;
+  align-items: center;
+}
+header .navbar .navMenu .links {
+  padding-right: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: system-ui;
+}
+header .navbar .navMenu .bagContainer .bagLogo {
+  width: 40px;
+  cursor: pointer;
+}
+header .navbar .hamburger {
+  display: none;
+  cursor: pointer;
+}
+header .navbar .hamburger .bar {
+  display: block;
+  background: black;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+header .navbar .cart {
+  position: fixed;
+  width: 40%;
+  background: white;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  transition: 0.5s ease-in-out;
+  z-index: 10;
+}
+header .navbar .cart .cartTitle {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  border-bottom: #262626 1px solid;
+}
+header .navbar .cart .cartTitle h2 {
+  text-align: center;
+  flex-grow: 1;
+  text-transform: uppercase;
+  padding: 20px 0px;
+  font-size: 1.5rem;
+  font-family: system-ui;
+}
+header .navbar .cart .cartTitle .cartClose {
+  padding: 0 20px;
+  cursor: pointer;
+}
+header .navbar .cart .cartTitle .cartClose .barCart {
+  flex-grow: 2;
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+header .navbar .cart .cartTitle .cartClose .barCart:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: black;
+}
+header .navbar .cart .cartTitle .cartClose .barCart:nth-child(2) {
+  opacity: 0;
+}
+header .navbar .cart .cartTitle .cartClose .barCart:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background: red;
+}
+header .navbar .cart.active {
+  right: 0;
+  transition: 0.3s;
+}
+header .hero {
+  padding: 120px 0 0;
+}
+header .hero h1 {
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  font-family: system-ui;
+}
+header .hero h1 .titleMod {
+  color: red;
+}
+
+@media (max-width: 1100px) {
+  header .navbar .cart {
+    width: 55%;
+  }
+}
+@media (max-width: 768px) {
+  body.active {
+    overflow: hidden;
+  }
+  header .navbar .hamburger {
+    display: block;
+  }
+  header .navbar .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  header .navbar .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background: white;
+  }
+  header .navbar .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background: red;
+  }
+  header .navbar .navMenu {
+    position: fixed;
+    background: #262626;
+    right: -100%;
+    top: 0;
+    gap: 50px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  header .navbar .navMenu .links {
+    font-size: 2rem;
+    color: rgb(241, 235, 235);
+  }
+  header .navbar .navMenu .links:hover {
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+  }
+  header .navbar .navMenu .bagContainer .bagLogo {
+    width: 60px;
+    filter: invert(100%);
+    cursor: pointer;
+  }
+  header .navbar .navMenu.active {
+    right: 0;
+  }
+  header .navbar .cart {
+    width: 60%;
+  }
+  header .hero h1 {
+    font-size: 5.7rem;
+  }
+}
+@media (max-width: 600px) {
+  header .navbar .cart {
+    width: 100%;
+  }
+  header .hero h1 {
+    font-size: 3.8rem;
+  }
+}
+@media (max-width: 450px) {
+  header .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
